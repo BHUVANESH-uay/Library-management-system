@@ -38,8 +38,6 @@ All reader features, plus:
 - `userpw` – Reset a user's password (use with caution)
 - `removebook` – Remove a book from the system (ensure fines are cleared for lost books)
 
-> ⚠️ **Caution:** When removing a book due to a loss, ensure the student has returned it and the fine is paid, or it may affect the entire system's integrity.
-
 ---
 
 ## 🛠️ Built With
