@@ -1,48 +1,71 @@
-# 📚 Library Management System (CLI-Based) — Golang
+# 📚 Library Management System (Golang)
 
-A command-line based **Library Management System** built with Go, designed to simulate real-world library operations. The system supports multiple user roles (Guest, Reader, Administrator) and provides features such as book search, borrowing, returning, and administrative control.
+A command-line based **Library Management System** built with Go. The system supports multiple user roles (Guest, Reader, Administrator) with different levels of access to manage books, borrowing, and user operations.
 
 ---
 
 ## 🧩 Features
 
 ### 🔐 Authentication
-- `register` – Create a new user account
-- `login` – Log in with credentials
+- `register` – Register a new user account
+- `login` – Log in with your credentials
 - `guest-mode` – Use the system without logging in
-- `exit` – Logout and exit the application
+- `exit` – Log out and exit the system
+- `help` – Get instructions for using the system
 
-### 👤 Role-Based Access
+### 👤 User Roles and Commands
 
-#### Guest:
-- Search books by `title`, `author`, or `isbn`
+#### **1. Guest**
+- `title` – Search books by title
+- `author` – Search books by author
+- `isbn` – Search books by ISBN
 
-#### Reader:
-- All guest features +
-- Reset own password (`pw`)
-- Borrow and return books
-- Extend return deadlines
-- View deadlines, overdue books, unreturned books, and borrow history
+#### **2. Reader (Logged-in User)**
+All guest features, plus:
+- `pw` – Reset your own password
+- `borrow` – Borrow a book
+- `return` – Return a borrowed book
+- `extend` – Extend the return deadline of a book
+- `deadline` – Query the return deadline of a borrowed book
+- `overdue` – View the number of overdue books
+- `unreturned` – View all unreturned books
+- `history` – View your borrow history
 
-#### Administrator:
-- All reader features +
-- Add new users (`adduser`)
-- Add and remove books (`addbook`, `removebook`)
-- Reset user passwords (`userpw`)
+#### **3. Administrator**
+All reader features, plus:
+- `adduser` – Add a new user and set their role
+- `addbook` – Add a new book to the system
+- `userpw` – Reset a user's password (use with caution)
+- `removebook` – Remove a book from the system (ensure fines are cleared for lost books)
 
-> 🛑 Admins are advised to reset passwords and remove books cautiously, especially in cases involving lost books and fines.
+> ⚠️ **Caution:** When removing a book due to a loss, ensure the student has returned it and the fine is paid, or it may affect the entire system's integrity.
 
 ---
 
 ## 🛠️ Built With
 
 - **Golang** — Core language
-- CLI — Terminal-based interface
-- Simple file-based storage (or easily extendable to DB)
+- **CLI** — Command-line interface for easy interaction
 
 ---
 
 ## 🚀 Getting Started
 
-```bash
-go run main.go
+1. Clone this repository:
+    ```bash
+    git clone https://github.com/yourusername/library-management-system.git
+    ```
+
+2. Navigate into the project directory:
+    ```bash
+    cd library-management-system
+    ```
+
+3. Run the system:
+    ```bash
+    go run main.go
+    ```
+
+4. Follow the on-screen instructions to register, log in, and explore the features.
+
+---
